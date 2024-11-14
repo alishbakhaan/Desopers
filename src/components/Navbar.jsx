@@ -1,6 +1,6 @@
+
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { ArrowUpRightIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
 
 const navigation = [
   { name: 'Our Services', href: '#', current: true },
@@ -38,7 +38,7 @@ export default function Example() {
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
-                  <Link
+                  <DisclosureButton
                     key={item.name}
                     href={item.href}
                     aria-current={item.current ? 'page' : undefined}
@@ -48,7 +48,7 @@ export default function Example() {
                     )}
                   >
                     {item.name}
-                  </Link>
+                  </DisclosureButton>
                 ))}
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function Example() {
       <DisclosurePanel className="sm:hidden">
         <div className="space-y-1 px-2 pb-3 pt-2">
           {navigation.map((item) => (
-            <Link
+            <DisclosureButton
               key={item.name}
               href={item.href}
               aria-current={item.current ? 'page' : undefined}
@@ -80,7 +80,7 @@ export default function Example() {
               )}
             >
               {item.name}
-            </Link>
+            </DisclosureButton>
           ))}
         </div>
       </DisclosurePanel>
